@@ -239,7 +239,7 @@ def total_items_sold(db: Session = Depends(get_db)):
 
 
 # Low Stock Medicines
-@app.get("/dashboard/low-stock")
+@app.get("/dashboard/low-stock", response_model=List[schemas.MedicineResponse])
 def low_stock(db: Session = Depends(get_db)):
 
     medicines = db.query(models.Medicine).filter(
@@ -251,8 +251,8 @@ def low_stock(db: Session = Depends(get_db)):
 
 
 # Recent Sales
-@app.get("/dashboard/recent-sales")
-def recent_sales(db: Session = Depends(get_db)):
+@app.get("/dashboard/low-stock", response_model=List[schemas.MedicineResponse])
+def low_stock(db: Session = Depends(get_db)):
 
     sales = db.query(models.Sale).order_by(
         models.Sale.sold_at.desc()
