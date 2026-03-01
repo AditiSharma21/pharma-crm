@@ -1,18 +1,19 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine
 import models, schemas
-from datetime import datetime, date
+from datetime import datetime
 from typing import List
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-from fastapi.middleware.cors import CORSMiddleware
 
+# 🔥 CORS MUST BE HERE
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # <-- IMPORTANT
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
