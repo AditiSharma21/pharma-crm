@@ -11,11 +11,14 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 # 🔥 CORS MUST BE HERE
+origins = [
+    "https://pharma-crm-1.onrender.com",
+    "https://pharma-crm-gp2w.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://pharma-crm-gp2w.vercel.app",
-    ],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
