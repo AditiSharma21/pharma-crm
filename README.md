@@ -110,14 +110,7 @@ npm start
 ## Live Deployment
 
 Backend: Render  
-Frontend: Vercel
+Frontend: Render
 
 ---
 
-## Author
-Your Namegit init
-git add .
-git commit -m "Pharmacy CRM Submission"
-git branch -M main
-git remote add origin https://github.com/yourusername/pharmacy-crm.git
-git push -u origin main
