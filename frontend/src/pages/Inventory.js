@@ -8,22 +8,26 @@ function Inventory() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+useEffect(() => {
   const fetchMedicines = async () => {
     try {
       const response = await API.get("/inventory", {
-        params: { search, status },
+        params: {
+          search: search || undefined,
+          status: status !== "All" ? status : undefined
+        }
       });
+
       setMedicines(response.data);
-    } catch {
+    } catch (err) {
       setError("Failed to load inventory.");
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => {
-    fetchMedicines();
-  }, [search, status]);
+  fetchMedicines();
+}, [search, status]);
 
   if (loading)
     return (
