@@ -12,10 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-         "https://pharma-crm-gp2w.vercel.app",
-    ],
+    allow_origins=["*"],   # <-- IMPORTANT
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
