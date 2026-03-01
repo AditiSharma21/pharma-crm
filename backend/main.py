@@ -16,6 +16,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://pharma-crm-1.onrender.com",
+        "https://pharma-crm-gp2w.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
