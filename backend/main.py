@@ -14,8 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://pharma-crm-7d77.vercel.app",
-        "https://pharma-crm-8kj7.vercel.app",
+         "https://pharma-crm-gp2w.vercel.app",
     ],
     allow_credentials=False,
     allow_methods=["*"],
